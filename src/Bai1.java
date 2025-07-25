@@ -20,14 +20,35 @@ public class Bai1 {
                 System.out.printf("diện tích hình vuông là: %.2f", dienTich);
                 break;
             case Triangle:
-                System.out.println("nhập cạnh đáy: ");
-                double canhDay = sc.nextDouble();
-                System.out.println("nhập chiều cao: ");
-                double chieuCao = sc.nextDouble();
-                System.out.println("cạnh đáy hình tam giác là: " + canhDay);
-                System.out.println("chiều cao tam giác là: " + chieuCao);
-                dienTich = 0.5 * canhDay * chieuCao;
-                System.out.printf("diện tích hình tam giác là: %.2f", dienTich);
+                System.out.println("Chọn cách nhập:");
+                System.out.println("1. Nhập cạnh đáy và chiều cao");
+                System.out.println("2. Nhập 3 cạnh");
+                System.out.print("Lựa chọn (1 hoặc 2): ");
+                int truongHop = sc.nextInt();
+                if (truongHop == 1) {
+                    System.out.print("Nhập cạnh đáy: ");
+                    double canhDay = sc.nextDouble();
+                    System.out.print("Nhập chiều cao: ");
+                    double chieuCao = sc.nextDouble();
+                    dienTich = 0.5 * canhDay * chieuCao;
+                    System.out.printf("Diện tích tam giác là: %.2f", dienTich);
+                } else if (truongHop == 2) {
+                    System.out.print("Nhập cạnh a: ");
+                    double a = sc.nextDouble();
+                    System.out.print("Nhập cạnh b: ");
+                    double b = sc.nextDouble();
+                    System.out.print("Nhập cạnh c: ");
+                    double c = sc.nextDouble();
+                    if (a + b > c && b + c > a && c + a > b) {
+                        double s = (a + b + c) / 2;
+                        dienTich = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+                        System.out.printf("Diện tích tam giác là: %.2f", dienTich);
+                    } else {
+                        System.out.println("Ba cạnh không tạo thành một tam giác hợp lệ!");
+                    }
+                } else {
+                    System.out.println("Lựa chọn không hợp lệ.");
+                }
                 break;
             case Circle:
                 System.out.println("nhập bán kính hình tròn: ");
