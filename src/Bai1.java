@@ -20,21 +20,21 @@ public class Bai1 {
                 System.out.printf("diện tích hình vuông là: %.2f", dienTich);
                 break;
             case Triangle:
-                System.out.println("nhập chiều dài: ");
-                double chieuDai = sc.nextDouble();
-                System.out.println("nhập chiều rông: ");
-                double chieuRong = sc.nextDouble();
-                System.out.println("chiều dài hình chữ nhât là: " + chieuDai);
-                System.out.println("chiều rộng hình chữ nhật lầ: " + chieuRong);
-                dienTich = chieuDai * chieuRong;
-                System.out.printf("diện tích hình chữ nhật là: %.2f", dienTich);
+                System.out.println("nhập cạnh đáy: ");
+                double canhDay = sc.nextDouble();
+                System.out.println("nhập chiều cao: ");
+                double chieuCao = sc.nextDouble();
+                System.out.println("cạnh đáy hình tam giác là: " + canhDay);
+                System.out.println("chiều cao tam giác là: " + chieuCao);
+                dienTich = 0.5 * canhDay * chieuCao;
+                System.out.printf("diện tích hình tam giác là: %.2f", dienTich);
                 break;
             case Circle:
                 System.out.println("nhập bán kính hình tròn: ");
                 double banKinh = sc.nextDouble();
-                System.out.println("bán kính vừa nhập là: ");
+                System.out.println("bán kính vừa nhập là: "+banKinh);
                 dienTich = PI * banKinh * banKinh;
-                System.out.printf("diện tích hình trong là: ", dienTich);
+                System.out.printf("diện tích hình tròn là: %.2f", dienTich);
                 break;
             default:
                 System.out.println("hình dạng không hợp lệ !");
